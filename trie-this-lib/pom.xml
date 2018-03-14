@@ -8,7 +8,6 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
   <artifactId>trie-this-lib</artifactId>
-  <version>1.0-SNAPSHOT</version>
   <name>trie-this-lib</name>
   <url>http://maven.apache.org</url>
   <properties>

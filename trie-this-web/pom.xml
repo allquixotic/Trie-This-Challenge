@@ -9,7 +9,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>trie-this-web</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <name>trie-this-web</name>
     <url>http://maven.apache.org</url>
     <properties>
