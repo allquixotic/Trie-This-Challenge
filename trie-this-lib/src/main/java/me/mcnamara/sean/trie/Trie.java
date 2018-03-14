@@ -1,25 +1,47 @@
 package me.mcnamara.sean.trie;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-public class Trie
-{
-	private Set<String> words = new HashSet<>();
-	
-    public boolean add(String word) {
-    		return words.add(word.toLowerCase());
-    }
-    
-    public boolean contains(String word) {
-    		return words.contains(word.toLowerCase());
-    }
-    
-    public List<String> search(String prefix) {
-    		List<String> retval = new ArrayList<String>();
-    		
-    		return retval;
-    }
+public class Trie {
+	private TrieNode root = new TrieNode("", false);
+
+	public boolean add(String word) {
+		return !navigate(word, true);
+	}
+
+	public boolean contains(String word) {
+		return navigate(word, false);
+	}
+
+	private boolean navigate(String word, boolean addIfMissing) {
+		TrieNode node = root;
+		boolean alreadyExisted = true;
+		for (int i = 0; i < word.length(); i++) {
+			String subword = String.valueOf(word.charAt(i));
+			TrieNode tmp = node.getChild(subword);
+			if (tmp == null) {
+				alreadyExisted = false;
+				if(!addIfMissing) {
+					return alreadyExisted;
+				}
+				node = node.addChild(new TrieNode(subword, i == word.length() - 1));
+			} else {
+				node = tmp;
+				if (i == word.length() - 1 && node.isWord() == false) {
+					if(addIfMissing) {
+						node.setIsWord(true);
+					}
+					alreadyExisted = false;
+				}
+			}
+		}
+		return alreadyExisted;
+	}
+
+	public List<String> search(String prefix) {
+		List<String> retval = new ArrayList<String>();
+
+		return retval;
+	}
 }

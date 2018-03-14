@@ -27,7 +27,7 @@ public class TrieTest
     }
     
     @Test
-    public void testaddDuplicateWord_returnsFalse() {
+    public void testAddDuplicateWord_returnsFalse() {
     		assertThat(trie.add("hello")).isTrue();
     		assertThat(trie.add("hello")).isFalse();
     }
