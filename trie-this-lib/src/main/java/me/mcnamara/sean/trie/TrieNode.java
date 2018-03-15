@@ -2,8 +2,7 @@ package me.mcnamara.sean.trie;
 
 import java.util.SortedMap;
 import java.util.TreeMap;
-
-import org.assertj.core.util.Arrays;
+import java.util.Arrays;
 
 class TrieNode {
 	private final String value;
@@ -14,7 +13,7 @@ class TrieNode {
 		this.value = value;
 		this._isWord = isWord;
 		this._children = new TreeMap<>();
-		Arrays.asList(children).forEach((child) -> _children.put(((TrieNode) child).getValue(), (TrieNode) child));
+		Arrays.asList(children).forEach(child -> _children.put(((TrieNode) child).getValue(), (TrieNode) child));
 	}
 	
 	public SortedMap<String, TrieNode> getChildren() {
