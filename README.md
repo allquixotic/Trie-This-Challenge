@@ -11,6 +11,7 @@
  	- jUnit: Eclipse Public License 1.0
  	- jMockit: 2-Clause BSD
  	- AssertJ: Apache License 2.0
+- Requires Java 9 and Maven 3.5 or later - everything else should be pulled in from public Maven repositories.
 
 ## How To Run
 
